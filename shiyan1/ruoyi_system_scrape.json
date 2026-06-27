@@ -1,0 +1,57 @@
+{
+  "scrapeInfo": {
+    "scrapeTime": "2026-06-26",
+    "targetUrl": "https://vue.ruoyi.vip/index",
+    "systemName": "若依管理系统",
+    "version": "v3.9.2",
+    "note": "由于在线演示版本路由切换限制，页面内容未完全加载，但菜单结构和接口信息已完整采集"
+  },
+  "menuStructure": {
+    "systemManagement": [
+      { "name": "用户管理", "href": "/system/user" },
+      { "name": "角色管理", "href": "/system/role" },
+      { "name": "菜单管理", "href": "/system/menu" },
+      { "name": "部门管理", "href": "/system/dept" },
+      { "name": "岗位管理", "href": "/system/post" },
+      { "name": "字典管理", "href": "/system/dict" },
+      { "name": "参数设置", "href": "/system/config" },
+      { "name": "通知公告", "href": "/system/notice" },
+      { "name": "操作日志", "href": "/system/log/operlog" },
+      { "name": "登录日志", "href": "/system/log/logininfor" }
+    ],
+    "systemMonitor": [
+      { "name": "在线用户", "href": "/monitor/online" },
+      { "name": "定时任务", "href": "/monitor/job" },
+      { "name": "数据监控", "href": "/monitor/druid" },
+      { "name": "服务监控", "href": "/monitor/server" },
+      { "name": "缓存监控", "href": "/monitor/cache" },
+      { "name": "缓存列表", "href": "/monitor/cacheList" }
+    ],
+    "systemTools": [
+      { "name": "表单构建", "href": "/tool/build" },
+      { "name": "代码生成", "href": "/tool/gen" },
+      { "name": "系统接口", "href": "/tool/swagger" }
+    ]
+  },
+  "apiRequests": [
+    { "method": "GET", "url": "https://vue.ruoyi.vip/login", "status": 200 },
+    { "method": "GET", "url": "https://vue.ruoyi.vip/prod-api/captchaImage", "status": 200 },
+    { "method": "POST", "url": "https://vue.ruoyi.vip/prod-api/login", "status": 200 },
+    { "method": "GET", "url": "https://vue.ruoyi.vip/prod-api/getInfo", "status": 200 },
+    { "method": "GET", "url": "https://vue.ruoyi.vip/prod-api/getRouters", "status": 200 },
+    { "method": "GET", "url": "https://vue.ruoyi.vip/prod-api/system/notice/listTop", "status": 200 }
+  ],
+  "pageData": [
+    {
+      "pageName": "首页",
+      "url": "https://vue.ruoyi.vip/index",
+      "title": "首页 - 若依管理系统",
+      "buttons": ["访问码云", "访问主页", "清空", "确定"],
+      "description": "系统介绍页面，展示技术选型和更新日志"
+    }
+  ],
+  "technologyStack": {
+    "backend": ["SpringBoot", "Spring Security", "JWT", "MyBatis", "Druid", "Fastjson"],
+    "frontend": ["Vue", "Vuex", "Element-ui", "Axios", "Sass", "Quill"]
+  }
+}

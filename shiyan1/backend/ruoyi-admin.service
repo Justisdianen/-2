@@ -1,0 +1,16 @@
+[Unit]
+Description=若依管理系统后端服务
+After=network.target mysql.service
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/ruoyi-admin
+ExecStart=/usr/bin/java -Xms512m -Xmx1024m -XX:+UseG1GC -jar /opt/ruoyi-admin/ruoyi-admin-1.0.0.jar --spring.profiles.active=prod
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

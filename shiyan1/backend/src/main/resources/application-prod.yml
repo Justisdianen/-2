@@ -1,0 +1,62 @@
+# 生产环境配置
+server:
+  port: 8082
+
+spring:
+  datasource:
+    url: jdbc:mysql://prod-mysql-server:3306/ruoyi_prod?useUnicode=true&characterEncoding=utf8&useSSL=true&serverTimezone=Asia/Shanghai
+    username: prod_user
+    password: prod_password_change_this
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 20
+      min-idle: 20
+      max-active: 100
+      max-wait: 60000
+      validation-query: SELECT 1
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+
+  # Redis配置（生产环境必须）
+  data:
+    redis:
+      host: prod-redis-server
+      port: 6379
+      password: prod_redis_password_change_this
+      database: 2
+      timeout: 10000
+      lettuce:
+        pool:
+          max-active: 20
+          max-idle: 10
+          min-idle: 5
+
+# JWT配置
+jwt:
+  secret: prodSecretKeyMustBeChangedBeforeProduction2024VeryLong
+  expire: 7200  # 2小时
+
+# Swagger配置（生产环境关闭）
+springdoc:
+  swagger-ui:
+    enabled: false
+  api-docs:
+    enabled: false
+
+# 日志文件配置
+logging:
+  file:
+    path: logs/prod
+    name: logs/prod/ruoyi-prod.log
+  level:
+    root: WARN
+    com.example.ruoyi: INFO
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  logback:
+    rollingpolicy:
+      max-file-size: 100MB
+      max-history: 30
+      total-size-cap: 3GB

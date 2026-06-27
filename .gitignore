@@ -1,0 +1,14 @@
+shiyan1/.idea/
+shiyan1/.vscode/
+shiyan1/backend/target/
+shiyan1/backend/logs/
+shiyan1/backend/maven/
+shiyan1/backend/maven.zip
+shiyan1/node_modules/
+shiyan1/dist/
+shiyan1/build/
+shiyan1/.env*
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

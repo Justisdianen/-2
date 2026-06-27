@@ -1,0 +1,47 @@
+# 测试环境配置
+server:
+  port: 8081
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/example_db_test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: ck85726913
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      initial-size: 10
+      min-idle: 10
+      max-active: 50
+      max-wait: 60000
+
+  # Redis配置（测试环境必须）
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password:
+      database: 1
+
+# JWT配置
+jwt:
+  secret: ruoyiSecretKeyForJwtTokenGeneration2024Test
+  expire: 3600  # 1小时
+
+# Swagger配置（测试环境开启）
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+
+# 日志文件配置
+logging:
+  file:
+    path: logs/test
+    name: logs/test/ruoyi-test.log
+  level:
+    root: INFO
+    com.example.ruoyi: INFO
